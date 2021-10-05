@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      Я думаю это <input type="text" [(ngModel)]="userMessage">
+      <button mat-flat-button (click)="guessWord()">Отправить</button>
+    </div>
+  </div>
+  <ng-container *ngIf="history">
+    <div *ngFor="let message of history" class="row">
+      <div class="col-12">
+        <span>{{getSender(message)}}: </span> <span>{{message.text}}</span>
+      </div>
+    </div>
+  </ng-container>
+</div>
